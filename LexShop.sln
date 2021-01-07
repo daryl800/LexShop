@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexShop.Core", "LexShop.Core\LexShop.Core.csproj", "{393B1F11-DD57-40B4-8503-BBCCAE107CE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexShop.Services", "LexShop.Services\LexShop.Services.csproj", "{BFFFAD03-A16B-49DF-89CD-505DFE2BEA1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexShop.DataAccess.SQL", "LexShop.DataAccess.SQL\LexShop.DataAccess.SQL.csproj", "{5A6EAD1D-8732-46D7-8C48-9ADC947496A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexShop.DataAccess.InMemory", "LexShop.DataAccess.InMemory\LexShop.DataAccess.InMemory.csproj", "{D7410D1D-6932-4F88-A5D8-CF2BE97F21EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexShop.WebUI", "LexShop.WebUI\LexShop.WebUI.csproj", "{F3C7B3D9-145D-4A86-96B4-5104B6719E60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{393B1F11-DD57-40B4-8503-BBCCAE107CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{393B1F11-DD57-40B4-8503-BBCCAE107CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{393B1F11-DD57-40B4-8503-BBCCAE107CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{393B1F11-DD57-40B4-8503-BBCCAE107CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFFFAD03-A16B-49DF-89CD-505DFE2BEA1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFFFAD03-A16B-49DF-89CD-505DFE2BEA1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFFFAD03-A16B-49DF-89CD-505DFE2BEA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFFFAD03-A16B-49DF-89CD-505DFE2BEA1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A6EAD1D-8732-46D7-8C48-9ADC947496A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A6EAD1D-8732-46D7-8C48-9ADC947496A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A6EAD1D-8732-46D7-8C48-9ADC947496A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A6EAD1D-8732-46D7-8C48-9ADC947496A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7410D1D-6932-4F88-A5D8-CF2BE97F21EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7410D1D-6932-4F88-A5D8-CF2BE97F21EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7410D1D-6932-4F88-A5D8-CF2BE97F21EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7410D1D-6932-4F88-A5D8-CF2BE97F21EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C7B3D9-145D-4A86-96B4-5104B6719E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C7B3D9-145D-4A86-96B4-5104B6719E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C7B3D9-145D-4A86-96B4-5104B6719E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C7B3D9-145D-4A86-96B4-5104B6719E60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1A420E0-A985-4F8B-A444-90DD3538A045}
+	EndGlobalSection
+EndGlobal

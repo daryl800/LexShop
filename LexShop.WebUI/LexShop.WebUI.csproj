@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,6 +236,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\ProductManager\Index.cshtml" />
+    <Content Include="Views\ProductManager\Create.cshtml" />
+    <Content Include="Views\ProductManager\Edit.cshtml" />
+    <Content Include="Views\ProductManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +256,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LexShop.Core\LexShop.Core.csproj">
+      <Project>{393b1f11-dd57-40b4-8503-bbccae107ce2}</Project>
+      <Name>LexShop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LexShop.DataAccess.InMemory\LexShop.DataAccess.InMemory.csproj">
+      <Project>{d7410d1d-6932-4f88-a5d8-cf2be97f21eb}</Project>
+      <Name>LexShop.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LexShop.DataAccess.SQL\LexShop.DataAccess.SQL.csproj">
+      <Project>{5a6ead1d-8732-46d7-8c48-9adc947496a7}</Project>
+      <Name>LexShop.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LexShop.Services\LexShop.Services.csproj">
+      <Project>{bfffad03-a16b-49df-89cd-505dfe2bea1f}</Project>
+      <Name>LexShop.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

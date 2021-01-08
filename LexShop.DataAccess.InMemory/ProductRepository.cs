@@ -20,28 +20,26 @@ namespace LexShop.DataAccess.InMemory
             {
                 products = new List<Product>();
             }
-        }
-        public void Commmit()
-        {
-            cache["prodcuts"] = products;
-        }
 
+        }
+        public void Commit()
+        {
+            cache["products"] = products;
+        }
         public void Insert(Product p)
         {
             products.Add(p);
         }
-
         public void Update(Product product)
         {
             Product productToUpdate = products.Find(p => p.Id == product.Id);
-
             if (productToUpdate != null)
             {
                 productToUpdate = product;
             }
             else
             {
-                throw new Exception("Product not found!");
+                throw new Exception("Product not found");
             }
         }
         public Product Find(string Id)
@@ -53,14 +51,13 @@ namespace LexShop.DataAccess.InMemory
             }
             else
             {
-                throw new Exception("Product not found!");
+                throw new Exception("Product not found");
             }
         }
         public IQueryable<Product> Collection()
         {
             return products.AsQueryable();
         }
-
         public void Delete(string Id)
         {
             Product productToDelete = products.Find(p => p.Id == Id);
@@ -72,8 +69,6 @@ namespace LexShop.DataAccess.InMemory
             {
                 throw new Exception("Product not found!");
             }
-
         }
-
     }
 }

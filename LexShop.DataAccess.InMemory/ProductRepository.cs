@@ -39,7 +39,7 @@ namespace LexShop.DataAccess.InMemory
             }
             else
             {
-                throw new Exception("Product not found");
+                throw new Exception("Product not found!!!");
             }
         }
         public Product Find(string Id)
@@ -51,7 +51,7 @@ namespace LexShop.DataAccess.InMemory
             }
             else
             {
-                throw new Exception("Product not found");
+                throw new Exception("Product not found!!!");
             }
         }
         public IQueryable<Product> Collection()
@@ -67,7 +67,7 @@ namespace LexShop.DataAccess.InMemory
             }
             else
             {
-                throw new Exception("Product not found!");
+                throw new Exception("Product not found!!!");
             }
         }
     }

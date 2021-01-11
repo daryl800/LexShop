@@ -32,7 +32,9 @@ namespace LexShop.DataAccess.InMemory
         }
         public void Update(Product product)
         {
-            Product productToUpdate = products.Find(p => p.Id == product.Id);
+            /*  Comment out the below line for testing purpose - use FirstOrDefault instead of Find */
+            //            Product productToUpdate = products.Find(p => p.Id == product.Id);
+            Product productToUpdate = products.FirstOrDefault(p => p.Id == product.Id);
             if (productToUpdate != null)
             {
                 productToUpdate = product;

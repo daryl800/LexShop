@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using LexShop.Core.Models;
 using LexShop.DataAccess.InMemory;
+using LexShop.Core.ViewModels;
 
 
 namespace LexShop.WebUI.Controllers
@@ -12,10 +13,12 @@ namespace LexShop.WebUI.Controllers
     public class ProductManagerController : Controller
     {
         ProductRepository context;
+        ProductCategoryRepository ProductCategories;
 
         public ProductManagerController()
         {
             context = new ProductRepository();
+            ProductCategories = new ProductCategoryRepository();
         }
 
         // GET: ProductManager
@@ -28,8 +31,12 @@ namespace LexShop.WebUI.Controllers
 
         public ActionResult Create()
         {
-            Product product = new Product();
-            return View(product);
+            ProductManagerViewModel viewModel = new ProductManagerViewModel();
+
+            viewModel.Product = new Product();
+            viewModel.ProductCategories = ProductCategories.Collection();
+
+            return View(viewModel);
 
         }
         [HttpPost]
@@ -58,7 +65,11 @@ namespace LexShop.WebUI.Controllers
             }
             else
             {
-                return View(product);
+                ProductManagerViewModel viewModel = new ProductManagerViewModel();
+                viewModel.Product = product;
+                viewModel.ProductCategories = ProductCategories.Collection();
+
+                return View(viewModel);
             }
         }
 

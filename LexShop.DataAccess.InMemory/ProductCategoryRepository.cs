@@ -41,6 +41,7 @@ namespace LexShop.DataAccess.InMemory
                 throw new Exception("Product Category not found!!!");
             }
         }
+
         public ProductCategory Find(string Id)
         {
             ProductCategory productCategory = productCategories.Find(p => p.Id == Id);
@@ -57,6 +58,7 @@ namespace LexShop.DataAccess.InMemory
         {
             return productCategories.AsQueryable();
         }
+
         public void Delete(string Id)
         {
             ProductCategory productCategoryToDelete = productCategories.Find(p => p.Id == Id);
@@ -66,7 +68,7 @@ namespace LexShop.DataAccess.InMemory
             }
             else
             {
-                throw new Exception("Product not found!!!");
+                throw new Exception("Product Category not found!!!");
             }
         }
     }

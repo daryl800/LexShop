@@ -5,15 +5,18 @@ using System.Web;
 using System.Web.Mvc;
 using LexShop.DataAccess.InMemory;
 using LexShop.Core.Models;
+using LexShop.Core.Contracts;
+
+
 
 namespace LexShop.WebUI.Controllers
 {
     public class ProductCategoryManagerController : Controller
     {
-        InMemoryRepository<ProductCategory> context;
-        public ProductCategoryManagerController()
+        IRepository<ProductCategory> context;
+        public ProductCategoryManagerController(IRepository<ProductCategory> productCategoryContext)
         {
-            context = new InMemoryRepository<ProductCategory>();
+            context = productCategoryContext;
         }
 
         public ActionResult Index()

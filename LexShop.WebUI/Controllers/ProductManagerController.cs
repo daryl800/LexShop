@@ -6,57 +6,48 @@ using System.Web.Mvc;
 using LexShop.Core.Models;
 using LexShop.DataAccess.InMemory;
 using LexShop.Core.ViewModels;
-
+using LexShop.Core.Contracts;
 
 namespace LexShop.WebUI.Controllers
 {
     public class ProductManagerController : Controller
     {
-        InMemoryRepository<Product> context;
-        InMemoryRepository<ProductCategory> ProductCategories;
-
-        public ProductManagerController()
+        IRepository<Product> context;
+        IRepository<ProductCategory> productCategories;
+        public ProductManagerController(IRepository<Product> productContext, IRepository<ProductCategory> productCategoryContext)
         {
-            context = new InMemoryRepository<Product>();
-            ProductCategories = new InMemoryRepository<ProductCategory>();
+            context = productContext;
+            productCategories = productCategoryContext;
         }
-
         // GET: ProductManager
         public ActionResult Index()
         {
             List<Product> products = context.Collection().ToList();
             return View(products);
-
         }
-
         public ActionResult Create()
         {
             ProductManagerViewModel viewModel = new ProductManagerViewModel();
 
             viewModel.Product = new Product();
-            viewModel.ProductCategories = ProductCategories.Collection();
-
+            viewModel.ProductCategories = productCategories.Collection();
             return View(viewModel);
-
         }
         [HttpPost]
         public ActionResult Create(Product product)
         {
             if (!ModelState.IsValid)
             {
-                System.Console.Write("Stranage 1");
                 return View(product);
             }
             else
             {
-                System.Console.Write("Stranage 2");
                 context.Insert(product);
                 context.Commit();
                 return RedirectToAction("Index");
             }
         }
-
-        public ActionResult Edit(String Id)
+        public ActionResult Edit(string Id)
         {
             Product product = context.Find(Id);
             if (product == null)
@@ -67,14 +58,12 @@ namespace LexShop.WebUI.Controllers
             {
                 ProductManagerViewModel viewModel = new ProductManagerViewModel();
                 viewModel.Product = product;
-                viewModel.ProductCategories = ProductCategories.Collection();
-
+                viewModel.ProductCategories = productCategories.Collection();
                 return View(viewModel);
             }
         }
-
         [HttpPost]
-        public ActionResult Edit (Product product, string Id)
+        public ActionResult Edit(Product product, string Id)
         {
             Product productToEdit = context.Find(Id);
             if (productToEdit == null)
@@ -97,12 +86,11 @@ namespace LexShop.WebUI.Controllers
 
                 return RedirectToAction("Index");
             }
-
         }
-
-        public ActionResult Delete(String Id)
+        public ActionResult Delete(string Id)
         {
             Product productToDelete = context.Find(Id);
+
             if (productToDelete == null)
             {
                 return HttpNotFound();
@@ -115,7 +103,7 @@ namespace LexShop.WebUI.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult ConfirmDelete(String Id)
+        public ActionResult ConfirmDelete(string Id)
         {
             Product productToDelete = context.Find(Id);
             if (productToDelete == null)
@@ -125,7 +113,6 @@ namespace LexShop.WebUI.Controllers
             else
             {
                 context.Delete(Id);
-                context.Commit();
                 return RedirectToAction("Index");
             }
         }

@@ -3,7 +3,7 @@ using LexShop.Core.Models;
 
 namespace LexShop.DataAccess.SQL
 {
-    class DataContext : DbContext
+    public class DataContext : DbContext
     {
         public DataContext() : base("DefaultConnection")
         {

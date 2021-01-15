@@ -41,8 +41,6 @@ namespace LexShop.DataAccess.SQL
             if (db.Entry(t).State == EntityState.Detached)
                 dbSet.Attach(t);
             dbSet.Remove(t);
-            Commit();
-            
         }
 
         public T Find(string Id)

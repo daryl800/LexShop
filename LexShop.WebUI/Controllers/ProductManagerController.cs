@@ -32,6 +32,7 @@ namespace LexShop.WebUI.Controllers
 
             viewModel.Product = new Product();
             viewModel.ProductCategories = productCategories.Collection();
+
             return View(viewModel);
         }
         [HttpPost]
